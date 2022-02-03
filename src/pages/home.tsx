@@ -26,12 +26,6 @@ const Home: React.FC = () => {
                 headers: {'authorization': `Bearer ${token}`}
             }
 
-            const updateStudentsState = (responseData: any) => {
-                useEffect(() => {
-                    setStudentDetails(responseData)
-                }, studentDetails)
-            }
-
             useEffect(() => {
                 axios.get("http://localhost:3000/api/students", config)
                 .then((res) => {
